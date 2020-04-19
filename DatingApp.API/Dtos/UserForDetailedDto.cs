@@ -5,14 +5,10 @@ using DatingApp.API.Models;
 namespace DatingApp.API.Dtos
 {
     public class UserForDetailedDto
-    {
-        
+    {        
         public int Id { get; set; }
         public string Username { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
-
-
+  
         public string Gender { get; set; }
 
         public string KnownAs { get; set; }
