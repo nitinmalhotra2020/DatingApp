@@ -52,6 +52,8 @@ namespace DatingApp.API
                     .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                     ValidateIssuer=false , ValidateAudience=false };
                             });
+
+            services.AddScoped<LogUserActivity>();
         }
 
         // Postman -> Add in Header 
