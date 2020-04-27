@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule, } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
@@ -11,6 +11,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 
 // RECOMMENDED
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
@@ -57,18 +58,21 @@ export function tokenGetter()
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
       JwtModule.forRoot(
          {
-            config:{
-               tokenGetter: tokenGetter,
+            config: {
+               tokenGetter: tokenGetter, 
                whitelistedDomains:['localhost:5000'],
                blacklistedRoutes:['localhost:5000/api/auth']
             }
